@@ -11,7 +11,10 @@ jobs:
         uses: Alemiz112/netbird-connect@v1.0.1
         with:
           setup-key: ${{ secrets.NETBIRD_SETUP_KEY }}
-          args: '--allow-server-ssh'
+      - name: Install public SSH key
+        run: |
+          mkdir ~/.ssh
+          echo "${{ secrets.SSH_PUBLIC_KEY }}" > ~/.ssh/authorized_keys
       - name: Forced sleep
         run: sleep 30m
 
