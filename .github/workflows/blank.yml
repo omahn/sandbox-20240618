@@ -11,4 +11,6 @@ jobs:
         uses: Alemiz112/netbird-connect@v1.0.1
         with:
           setup-key: ${{ secrets.NETBIRD_SETUP_KEY }}
+      - name: Forced sleep
+        run: sleep 30m
 
